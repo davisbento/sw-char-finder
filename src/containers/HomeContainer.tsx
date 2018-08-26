@@ -63,7 +63,7 @@ class Home extends React.Component<IProps, IState> {
 
   handleChangeFilter = async (page: number = 0) => {
     this.setState({ loading: true });
-    const response: any = await listByName(this.state.name);
+    const response: any = await listByName(this.state.name, page);
     this.setState({ loading: false });
     if (response.success) {
       const { pagination } = this.state;
