@@ -1,20 +1,29 @@
 {
-  "name": "react-ts-starter",
+  "name": "sw-char-finder",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "build-css": "node-sass-chokidar src/ -o src/",
+    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
+    "start-js": "react-scripts-ts start",
+    "start": "npm-run-all -p watch-css start-js",
+    "build-js": "react-scripts-ts build",
+    "build": "npm-run-all build-css build-js",
+    "test": "react-scripts-ts test --env=jsdom",
+    "eject": "react-scripts-ts eject"
+  },
   "dependencies": {
+    "@material-ui/core": "^1.4.3",
+    "@types/axios": "^0.14.0",
     "@types/react-router-dom": "^4.3.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
+    "react-router-dom": "^4.3.1",
     "react-scripts-ts": "2.16.0",
     "tslib": "^1.9.3",
-    "tslint-eslint-rules": "^5.3.1"
-  },
-  "scripts": {
-    "start": "react-scripts-ts start",
-    "build": "react-scripts-ts build",
-    "test": "react-scripts-ts test --env=jsdom",
-    "eject": "react-scripts-ts eject"
+    "tslint-eslint-rules": "^5.3.1",
+    "node-sass-chokidar": "^1.3.3",
+    "npm-run-all": "^4.1.3"
   },
   "devDependencies": {
     "@types/jest": "^23.3.1",

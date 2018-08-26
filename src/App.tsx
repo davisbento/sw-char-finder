@@ -1,16 +1,24 @@
 import React from 'react';
+import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
+
+import 'assets/scss/main.css';
+
+import Home from 'containers/HomeContainer';
+import Character from 'containers/CharacterContainer';
+import Navbar from 'containers/Navbar';
 
 class App extends React.Component {
   public render() {
     return (
-      <div className='App'>
-        <header className='App-header'>
-          <h1 className='App-title'>Welcome to React with TS</h1>
-        </header>
-        <p className='App-intro'>
-          To get started, edit <code>src/App.tsx</code> and save to reload.
-        </p>
-      </div>
+      <Router>
+        <React.Fragment>
+          <Navbar />
+          <Switch>
+            <Route exact path='/' component={Home} />
+            <Route path='/characters' component={Character} />
+          </Switch>
+        </React.Fragment>
+      </Router>
     );
   }
 }
