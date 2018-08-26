@@ -4,3 +4,4 @@
 2. Material-UI
 3. Docker with NGINX
 4. API by: https://swapi.co/
+5. Now Automatic Deploy
