@@ -53,7 +53,11 @@ class TableList extends React.Component<IProps, any> {
     }
 
     else if (list.length === 0) {
-      return <h4>List empty</h4>;
+      return (
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <h4>List empty</h4>
+        </div>
+      );
     }
 
     return (

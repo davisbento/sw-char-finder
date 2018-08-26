@@ -2,7 +2,7 @@ import React from 'react';
 import { withStyles, StyleRules } from '@material-ui/core/styles';
 import ButtonCustom from 'components/Shared/ButtonCustom';
 import TextField from '@material-ui/core/TextField';
-import { listByName } from 'helpers/api';
+import { listAllCharacters, listByName } from 'helpers/api';
 import { IPagination } from 'interfaces/IPagination';
 
 import CharacterList from 'components/Characters/CharacterList';
@@ -61,9 +61,9 @@ class Home extends React.Component<IProps, IState> {
     this.setState({ open, data });
   }
 
-  handleChangeFilter = async (page: number = 0) => {
+  handleChangeFilter = async (filter: string = null, page: number = 0) => {
     this.setState({ loading: true });
-    const response: any = await listByName(this.state.name, page);
+    const response: any = await listAllCharacters(filter);
     this.setState({ loading: false });
     if (response.success) {
       const { pagination } = this.state;
@@ -79,17 +79,16 @@ class Home extends React.Component<IProps, IState> {
     }
   }
 
-  handleSubmit = async (e: any, page: number = 0) => {
+  handleSubmit = async (e: any) => {
     e.preventDefault();
     this.setState({ loading: true, searched: true });
     const response: any = await listByName(this.state.name);
     this.setState({ loading: false });
     if (response.success) {
       const { pagination } = this.state;
-      pagination.page = page;
+
       pagination.count = response.result.data.count;
       pagination.next = response.result.data.next;
-      pagination.previous = response.result.data.previous;
 
       this.setState({
         list: response.result.data.results,
