@@ -14,7 +14,7 @@ export const listAllCharacters = async (filter?: string) => {
   }
 };
 
-export const listByName = async (name: string, page: number = 0) => {
+export const listByName = async (name: string, page: number = 1) => {
   try {
     const url = `https://swapi.co/api/people/?format=json&search=${name}&page=${page}`;
     const result = await axios.get(url);
