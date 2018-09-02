@@ -1,7 +1,16 @@
 # Star Wars Characters Find
-### URL: https://pensive-perlman-ae18ac.netlify.com/
+Live URL: https://pensive-perlman-ae18ac.netlify.com/
 
+### What we will learn
 1. React with TypeScript
+2. Implement React Components for Design like Material-UI and Ant Design (Material UI in this case)
+3. Change pagination between Front and API.
+4. Create reusable components
+5. Create a image from our APP using Docker and NGINX
+6. Automatic Deploy to Netlify
+
+### What we will use
+1. TypeScript
 2. Material-UI
 3. Docker with NGINX
 4. API by: https://swapi.co/
