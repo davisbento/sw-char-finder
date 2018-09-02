@@ -3,7 +3,9 @@ import { withStyles, StyleRules } from '@material-ui/core/styles';
 import ButtonCustom from 'components/Shared/ButtonCustom';
 import TextField from '@material-ui/core/TextField';
 import { listAllCharacters, listByName } from 'helpers/api';
+
 import { IPagination } from 'interfaces/IPagination';
+import { ICharacter } from 'interfaces/ICharacter';
 
 import CharacterList from 'components/Characters/CharacterList';
 import CharacterDetails from 'components/Characters/CharacterDetails';
@@ -29,7 +31,7 @@ interface IProps {
 
 interface IState {
   name: string;
-  list: any[];
+  list: ICharacter[];
   loading: boolean;
   open: boolean;
   pagination: IPagination;

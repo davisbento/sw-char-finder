@@ -11,9 +11,10 @@ import { withStyles, StyleRules } from '@material-ui/core/styles';
 
 import Loader from 'components/Shared/Loader';
 import { IPagination } from 'interfaces/IPagination';
+import { ICharacter } from 'interfaces/ICharacter';
 
 interface IProps {
-  list: any[];
+  list: ICharacter[];
   pagination: IPagination;
   handleOpen: any;
   handleChangeFilter: any;
@@ -90,7 +91,7 @@ class TableList extends React.Component<IProps, any> {
           component='div'
           count={pagination.count}
           rowsPerPage={10}
-          rowsPerPageOptions={[10]}
+          rowsPerPageOptions={[]}
           page={pagination.page}
           backIconButtonProps={{
             'aria-label': 'Previous Page',
