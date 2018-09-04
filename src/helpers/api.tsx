@@ -25,3 +25,15 @@ export const listByName = async (name: string, page: number = 1) => {
     return { success: false };
   }
 };
+
+export const listFilm = async (path: string) => {
+  try {
+    const url = `${path}?format=json`;
+    const result = await axios.get(url);
+    return { result, success: true };
+  }
+  catch (err) {
+    console.log(err);
+    return { success: false };
+  }
+};

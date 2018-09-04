@@ -4,6 +4,8 @@ import Dialog from '@material-ui/core/Dialog';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
+import FilmDetails from '../Films/FilmDetails';
+
 import { ICharacter } from 'interfaces/ICharacter';
 
 interface IProps {
@@ -21,9 +23,7 @@ const characterDetails = ({ isOpen, data, handleClose }: IProps) => (
       <hr />
       Films:
       {data.films.map((film, index) => (
-        <div key={index}>
-          <a href={film} target='_blank'>{film}</a>
-        </div>
+        <FilmDetails key={index} path={film} />
       ))}
     </DialogContent>
   </Dialog>
