@@ -25,7 +25,8 @@ interface IProps {
 const styles: StyleRules = {
   root: {
     padding: '20px',
-  }
+    overflowX: 'auto',
+  },
 };
 
 class TableList extends React.Component<IProps, any> {
@@ -62,31 +63,33 @@ class TableList extends React.Component<IProps, any> {
     }
 
     return (
-      <div className={classes.root}>
-        <Table>
-          <TableHead>
-            <TableRow>
-              <TableCell>Name</TableCell>
-              <TableCell>Height</TableCell>
-              <TableCell>Gender</TableCell>
-              <TableCell>Details</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {list.map((item, index) => (
-              <TableRow key={index}>
-                <TableCell>{item.name}</TableCell>
-                <TableCell>{item.height}</TableCell>
-                <TableCell>{item.gender}</TableCell>
-                <TableCell>
-                  <Button onClick={() => handleOpen(true, item)}>
-                    <Icon>visibility</Icon>
-                  </Button>
-                </TableCell>
+      <React.Fragment>
+        <div className={classes.root}>
+          <Table>
+            <TableHead>
+              <TableRow>
+                <TableCell>Name</TableCell>
+                <TableCell>Height</TableCell>
+                <TableCell>Gender</TableCell>
+                <TableCell>Details</TableCell>
               </TableRow>
-            ))}
-          </TableBody>
-        </Table>
+            </TableHead>
+            <TableBody>
+              {list.map((item, index) => (
+                <TableRow key={index}>
+                  <TableCell>{item.name}</TableCell>
+                  <TableCell>{item.height}</TableCell>
+                  <TableCell>{item.gender}</TableCell>
+                  <TableCell>
+                    <Button onClick={() => handleOpen(true, item)}>
+                      <Icon>visibility</Icon>
+                    </Button>
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </div>
         <TablePagination
           component='div'
           count={pagination.count}
@@ -102,7 +105,7 @@ class TableList extends React.Component<IProps, any> {
           onChangePage={this.handleChangePage}
           onChangeRowsPerPage={this.handleChangeRowsPerPage}
         />
-      </div>
+      </React.Fragment>
     );
   }
 }

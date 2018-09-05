@@ -1,27 +1,36 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { withStyles } from '@material-ui/core/styles';
+import { withStyles, StyleRules } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import Icon from '@material-ui/core/Icon';
-import IconButton from '@material-ui/core/IconButton';
 
-const styles = {
+const darthVader = require('assets/images/darth-vader.png');
+
+const styles: StyleRules = {
   root: {
     flexGrow: 1,
   },
   flex: {
     flexGrow: 1,
   },
+  header: {
+    backgroundColor: '#484846'
+  },
   menuButton: {
-    marginLeft: -12,
+    marginLeft: 2,
     marginRight: 20,
+    width: 40,
+    height: 40
   },
   btnLink: {
     textDecoration: 'none',
     color: '#fff'
+  },
+  imgResponsive: {
+    height: 'auto',
+    maxWidth: '100%'
   }
 };
 
@@ -29,11 +38,11 @@ function ButtonAppBar(props: any) {
   const { classes } = props;
   return (
     <div className={classes.root}>
-      <AppBar position='static'>
+      <AppBar position='static' className={classes.header}>
         <Toolbar>
-          <IconButton className={classes.menuButton} color='inherit' aria-label='Menu'>
-            <Icon>menu</Icon>
-          </IconButton>
+          <div className={classes.menuButton}>
+            <img className={classes.imgResponsive} src={darthVader} />
+          </div>
           <Typography variant='title' color='inherit' className={classes.flex}>
             SW Char Finder
           </Typography>
