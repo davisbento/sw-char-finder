@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { withStyles, StyleRules } from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -8,7 +8,7 @@ import Button from '@material-ui/core/Button';
 
 const darthVader = require('assets/images/darth-vader.png');
 
-const styles: StyleRules = {
+const styles = (theme: any) => ({
   root: {
     flexGrow: 1,
   },
@@ -16,23 +16,23 @@ const styles: StyleRules = {
     flexGrow: 1,
   },
   header: {
-    backgroundColor: '#484846'
+    backgroundColor: theme.palette.primary.main,
   },
   menuButton: {
     marginLeft: 2,
     marginRight: 20,
     width: 40,
-    height: 40
+    height: 40,
   },
   btnLink: {
     textDecoration: 'none',
-    color: '#fff'
+    color: '#fff',
   },
   imgResponsive: {
     height: 'auto',
-    maxWidth: '100%'
-  }
-};
+    maxWidth: '100%',
+  },
+});
 
 function ButtonAppBar(props: any) {
   const { classes } = props;
@@ -43,11 +43,19 @@ function ButtonAppBar(props: any) {
           <div className={classes.menuButton}>
             <img className={classes.imgResponsive} src={darthVader} />
           </div>
-          <Typography variant='title' color='inherit' className={classes.flex}>
+          <Typography variant='h5' className={classes.flex}>
             SW Char Finder
           </Typography>
-          <Button color='inherit'><Link className={classes.btnLink} to='/'>Home</Link></Button>
-          <Button color='inherit'><Link className={classes.btnLink} to='/characters'>Characters</Link></Button>
+          <Button color='inherit'>
+            <Link className={classes.btnLink} to='/'>
+              Home
+            </Link>
+          </Button>
+          <Button color='inherit'>
+            <Link className={classes.btnLink} to='/characters'>
+              Characters
+            </Link>
+          </Button>
         </Toolbar>
       </AppBar>
     </div>

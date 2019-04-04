@@ -22,7 +22,7 @@ const styles: StyleRules = {
   },
   pr8: {
     paddingRight: '8px',
-  }
+  },
 };
 
 interface IProps {
@@ -108,25 +108,36 @@ class Home extends React.Component<IProps, IState> {
           <h1>Star Wars Character Find</h1>
           <form className={classes.inline}>
             <TextField
-              type='text' value={this.state.name}
+              value={this.state.name}
               onChange={this.handleChange}
-              className={classes.pr8} placeholder='Type the name...' />
-            <ButtonCustom text={'Search'} handleSubmit={(e: any) => this.handleSubmit(e)} />
+              className={classes.pr8}
+              placeholder='Type the name...'
+            />
+            <ButtonCustom
+              text={'Search'}
+              handleSubmit={(e: any) => this.handleSubmit(e)}
+            />
           </form>
         </div>
 
         <div>
-          {searched && <CharacterList
-            list={list}
-            loading={loading}
-            handleChangeFilter={this.handleChangeFilter}
-            pagination={pagination}
-            handleOpen={this.handleOpen} />}
+          {searched && (
+            <CharacterList
+              list={list}
+              loading={loading}
+              handleChangeFilter={this.handleChangeFilter}
+              pagination={pagination}
+              handleOpen={this.handleOpen}
+            />
+          )}
 
-          {open && <CharacterDetails
-            isOpen={open}
-            data={data}
-            handleClose={() => this.handleOpen(false, {})} />}
+          {open && (
+            <CharacterDetails
+              isOpen={open}
+              data={data}
+              handleClose={() => this.handleOpen(false, {})}
+            />
+          )}
         </div>
       </React.Fragment>
     );
