@@ -164,12 +164,6 @@ const overrides: Overrides = {
         }
       }
     },
-    icon: {
-      color: '#FFF'
-    },
-    bar: {
-      background: '#98A5BC'
-    },
     colorSecondary: {
       color: '#ccc'
     }

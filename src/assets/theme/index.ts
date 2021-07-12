@@ -1,4 +1,4 @@
-import createMuiTheme from '@material-ui/core/styles/createMuiTheme';
+import { createTheme } from '@material-ui/core';
 
 import overrides from './overrides';
 
@@ -17,14 +17,12 @@ const secondary = {
   contrastText: '#fff'
 };
 
-export const theme = createMuiTheme({
+export const theme = createTheme({
   palette: { primary, secondary },
-  typography: { useNextVariants: true },
   overrides
 });
 
-export const reverseTheme = createMuiTheme({
+export const reverseTheme = createTheme({
   palette: { primary: secondary, secondary: primary },
-  typography: { useNextVariants: true },
   overrides
 });

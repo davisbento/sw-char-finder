@@ -2,6 +2,9 @@
 Live URL: https://pensive-perlman-ae18ac.netlify.com/
 
 ### What we will learn
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/5e55a3f6-0e95-4708-bbfb-1f74bb35b952/deploy-status)](https://app.netlify.com/sites/pensive-perlman-ae18ac/deploys)
+
 1. React with TypeScript
 2. Implement React Components for Design like Material-UI and Ant Design (Material UI in this case)
 3. Change pagination between Front and API.
