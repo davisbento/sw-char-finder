@@ -1,9 +1,7 @@
 # Star Wars Characters Find
-Live URL: https://pensive-perlman-ae18ac.netlify.com/
+Live URL: https://sw-char-finder.netlify.app/
 
 ### What we will learn
-
-## APP Url: https://sw-char-finder.netlify.app/
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/2dc84628-0b1a-4f82-8ba8-aa5de02b83ec/deploy-status)](https://app.netlify.com/sites/sw-char-finder/deploys)
 
