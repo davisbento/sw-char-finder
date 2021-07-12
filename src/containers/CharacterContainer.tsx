@@ -1,12 +1,10 @@
-import React from 'react';
-import { listAllCharacters } from 'helpers/api';
-import CharacterList from 'components/Characters/CharacterList';
 import CharacterDetails from 'components/Characters/CharacterDetails';
+import CharacterList from 'components/Characters/CharacterList';
+import { listAllCharacters } from 'helpers/api';
 import { IPagination } from 'interfaces/IPagination';
+import { Component } from 'react';
 
-interface IProps {
-
-}
+interface IProps {}
 
 interface IState {
   list: any[];
@@ -16,25 +14,25 @@ interface IState {
   loading: boolean;
 }
 
-class Character extends React.Component<IProps, IState> {
+class Character extends Component<IProps, IState> {
   readonly state: IState = {
     list: [],
     pagination: {
       count: 0,
       page: 0,
       next: '',
-      previous: '',
+      previous: ''
     },
     data: {},
     open: false,
-    loading: true,
+    loading: true
   };
 
   handleOpen = (open: boolean, data: any) => {
     this.setState({ open, data });
-  }
+  };
 
-  handleChangeFilter = async (filter: string = null, page: number = 0) => {
+  handleChangeFilter = async (filter: string = '', page: number = 0) => {
     this.setState({ loading: true });
     const response: any = await listAllCharacters(filter);
     this.setState({ loading: false });
@@ -47,10 +45,10 @@ class Character extends React.Component<IProps, IState> {
 
       this.setState({
         list: response.result.data.results,
-        pagination,
+        pagination
       });
     }
-  }
+  };
 
   componentDidMount() {
     this.handleChangeFilter();
@@ -65,12 +63,10 @@ class Character extends React.Component<IProps, IState> {
           loading={loading}
           handleChangeFilter={this.handleChangeFilter}
           pagination={pagination}
-          handleOpen={this.handleOpen} />
+          handleOpen={this.handleOpen}
+        />
 
-        {open && <CharacterDetails
-          isOpen={open}
-          data={data}
-          handleClose={() => this.handleOpen(false, {})} />}
+        {open && <CharacterDetails isOpen={open} data={data} handleClose={() => this.handleOpen(false, {})} />}
       </div>
     );
   }

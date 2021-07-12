@@ -10,7 +10,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Loader from 'components/Shared/Loader';
 import { ICharacter } from 'interfaces/ICharacter';
 import { IPagination } from 'interfaces/IPagination';
-import React from 'react';
+import { Component, Fragment } from 'react';
 
 interface IProps {
   list: ICharacter[];
@@ -28,7 +28,7 @@ const styles: StyleRules = {
   }
 };
 
-class TableList extends React.Component<IProps, any> {
+class TableList extends Component<IProps, any> {
   handleChangePage = (event: any, page: number) => {
     // this.props.pagination.page = página atual
     // page página para qual o usuário está indo
@@ -58,7 +58,7 @@ class TableList extends React.Component<IProps, any> {
     }
 
     return (
-      <React.Fragment>
+      <Fragment>
         <div className={classes.root}>
           <Table>
             <TableHead>
@@ -93,7 +93,7 @@ class TableList extends React.Component<IProps, any> {
           onPageChange={this.handleChangePage}
           onChangeRowsPerPage={this.handleChangeRowsPerPage}
         />
-      </React.Fragment>
+      </Fragment>
     );
   }
 }

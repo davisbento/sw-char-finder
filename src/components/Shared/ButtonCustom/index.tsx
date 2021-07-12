@@ -1,6 +1,5 @@
 import Button from '@material-ui/core/Button';
 import { StyleRules, withStyles } from '@material-ui/core/styles';
-import React from 'react';
 
 const styles: StyleRules = {
   root: {

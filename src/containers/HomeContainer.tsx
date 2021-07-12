@@ -6,7 +6,7 @@ import ButtonCustom from 'components/Shared/ButtonCustom';
 import { listAllCharacters, listByName } from 'helpers/api';
 import { ICharacter } from 'interfaces/ICharacter';
 import { IPagination } from 'interfaces/IPagination';
-import React from 'react';
+import { Component, Fragment } from 'react';
 
 const styles: StyleRules = {
   root: {
@@ -37,7 +37,7 @@ interface IState {
   searched: boolean;
 }
 
-class Home extends React.Component<IProps, IState> {
+class Home extends Component<IProps, IState> {
   readonly state: IState = {
     name: '',
     list: [],
@@ -61,7 +61,7 @@ class Home extends React.Component<IProps, IState> {
     this.setState({ open, data });
   };
 
-  handleChangeFilter = async (filter: string = null, page: number = 0) => {
+  handleChangeFilter = async (filter: string = '', page: number = 0) => {
     this.setState({ loading: true });
     const response: any = await listAllCharacters(filter);
     this.setState({ loading: false });
@@ -101,7 +101,7 @@ class Home extends React.Component<IProps, IState> {
     const { classes } = this.props;
     const { open, data, list, pagination, loading, searched } = this.state;
     return (
-      <React.Fragment>
+      <Fragment>
         <div className={classes.root}>
           <h1>Star Wars Character Find</h1>
           <form className={classes.inline}>
@@ -128,7 +128,7 @@ class Home extends React.Component<IProps, IState> {
 
           {open && <CharacterDetails isOpen={open} data={data} handleClose={() => this.handleOpen(false, {})} />}
         </div>
-      </React.Fragment>
+      </Fragment>
     );
   }
 }
