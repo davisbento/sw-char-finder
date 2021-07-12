@@ -14,5 +14,5 @@ Live URL: https://pensive-perlman-ae18ac.netlify.com/
 1. TypeScript
 2. Material-UI
 3. Docker with NGINX
-4. API by: https://swapi.co/
+4. API by: https://swapi.dev/
 5. Netlify Automatic Deploy
