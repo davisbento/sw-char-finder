@@ -86,18 +86,11 @@ class TableList extends React.Component<IProps, any> {
           </Table>
         </div>
         <TablePagination
-          component='div'
           count={pagination.count}
           rowsPerPage={10}
           rowsPerPageOptions={[]}
           page={pagination.page}
-          backIconButtonProps={{
-            'aria-label': 'Previous Page'
-          }}
-          nextIconButtonProps={{
-            'aria-label': 'Next Page'
-          }}
-          onChangePage={this.handleChangePage}
+          onPageChange={this.handleChangePage}
           onChangeRowsPerPage={this.handleChangeRowsPerPage}
         />
       </React.Fragment>
