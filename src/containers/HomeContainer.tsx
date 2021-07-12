@@ -1,28 +1,26 @@
-import React from 'react';
-import { withStyles, StyleRules } from '@material-ui/core/styles';
-import ButtonCustom from 'components/Shared/ButtonCustom';
+import { StyleRules, withStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
-import { listAllCharacters, listByName } from 'helpers/api';
-
-import { IPagination } from 'interfaces/IPagination';
-import { ICharacter } from 'interfaces/ICharacter';
-
-import CharacterList from 'components/Characters/CharacterList';
 import CharacterDetails from 'components/Characters/CharacterDetails';
+import CharacterList from 'components/Characters/CharacterList';
+import ButtonCustom from 'components/Shared/ButtonCustom';
+import { listAllCharacters, listByName } from 'helpers/api';
+import { ICharacter } from 'interfaces/ICharacter';
+import { IPagination } from 'interfaces/IPagination';
+import React from 'react';
 
 const styles: StyleRules = {
   root: {
     display: 'flex',
     alignItems: 'center',
-    flexDirection: 'column',
+    flexDirection: 'column'
   },
   inline: {
     display: 'flex',
-    justifyContent: 'center',
+    justifyContent: 'center'
   },
   pr8: {
-    paddingRight: '8px',
-  },
+    paddingRight: '8px'
+  }
 };
 
 interface IProps {
@@ -48,20 +46,20 @@ class Home extends React.Component<IProps, IState> {
       count: 0,
       page: 0,
       next: '',
-      previous: '',
+      previous: ''
     },
     data: {},
     open: false,
-    searched: false,
+    searched: false
   };
 
   handleChange = (e: any) => {
     this.setState({ name: e.target.value });
-  }
+  };
 
   handleOpen = (open: boolean, data: any) => {
     this.setState({ open, data });
-  }
+  };
 
   handleChangeFilter = async (filter: string = null, page: number = 0) => {
     this.setState({ loading: true });
@@ -76,10 +74,10 @@ class Home extends React.Component<IProps, IState> {
 
       this.setState({
         list: response.result.data.results,
-        pagination,
+        pagination
       });
     }
-  }
+  };
 
   handleSubmit = async (e: any) => {
     e.preventDefault();
@@ -94,10 +92,10 @@ class Home extends React.Component<IProps, IState> {
 
       this.setState({
         list: response.result.data.results,
-        pagination,
+        pagination
       });
     }
-  }
+  };
 
   render() {
     const { classes } = this.props;
@@ -113,10 +111,7 @@ class Home extends React.Component<IProps, IState> {
               className={classes.pr8}
               placeholder='Type the name...'
             />
-            <ButtonCustom
-              text={'Search'}
-              handleSubmit={(e: any) => this.handleSubmit(e)}
-            />
+            <ButtonCustom text={'Search'} handleSubmit={(e: any) => this.handleSubmit(e)} />
           </form>
         </div>
 
@@ -131,13 +126,7 @@ class Home extends React.Component<IProps, IState> {
             />
           )}
 
-          {open && (
-            <CharacterDetails
-              isOpen={open}
-              data={data}
-              handleClose={() => this.handleOpen(false, {})}
-            />
-          )}
+          {open && <CharacterDetails isOpen={open} data={data} handleClose={() => this.handleOpen(false, {})} />}
         </div>
       </React.Fragment>
     );

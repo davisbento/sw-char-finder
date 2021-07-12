@@ -1,26 +1,24 @@
 {
-  "files.exclude": {
-    "**/*.css": {
-      "when": "$(basename).scss"
-    },
-    "**/*.js": {
-      "when": "$(basename).ts"
-    },
-    "**/*?.js": {
-      "when": "$(basename).tsx"
-    },
-    "**/*.lock.json": true,
-    "**/*.map": {
-      "when": "$(basename)"
-    },
-    "**/.DS_Store": true,
-    "**/.git": true,
-    "**/.svn": true,
-    "**/.tmp": true,
-    "**/bin/**": true,
-    "**/obj/**": true
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
   },
-  "editor.formatOnSave": true,
-  "tslint.autoFixOnSave": true,
-  "typescript.tsdk": "node_modules/typescript/lib",
+  "editor.formatOnPaste": false,
+  "editor.formatOnSave": false,
+  "editor.formatOnType": false,
+  "editor.tabSize": 2,
+  "files.associations": {
+    ".env*": "properties",
+    ".prettierrc": "json"
+  },
+  "files.exclude": {
+    "**/.DS_Store": true,
+    ".docker-data": true,
+    "**/.git": true,
+    "**/.hg": true,
+    "**/.svn": true,
+    "**/CVS": true,
+    "dist": true
+  },
+  "typescriptHero.imports.organizeOnSave": true,
+  "typescript.tsdk": "node_modules/typescript/lib"
 }

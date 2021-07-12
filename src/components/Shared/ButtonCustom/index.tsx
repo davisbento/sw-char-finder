@@ -1,12 +1,12 @@
-import React from 'react';
 import Button from '@material-ui/core/Button';
-import { withStyles, StyleRules } from '@material-ui/core/styles';
+import { StyleRules, withStyles } from '@material-ui/core/styles';
+import React from 'react';
 
 const styles: StyleRules = {
   root: {
     backgroundColor: '#4056b5',
     borderRadius: '5px',
-    color: '#fff',
+    color: '#fff'
   }
 };
 

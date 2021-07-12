@@ -1,7 +1,6 @@
-import React from 'react';
-
 import { withStyles } from '@material-ui/core/';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import React from 'react';
 
 interface IProps {
   classes: any;
