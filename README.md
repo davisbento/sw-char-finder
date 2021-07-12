@@ -3,7 +3,9 @@ Live URL: https://pensive-perlman-ae18ac.netlify.com/
 
 ### What we will learn
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/5e55a3f6-0e95-4708-bbfb-1f74bb35b952/deploy-status)](https://app.netlify.com/sites/pensive-perlman-ae18ac/deploys)
+## APP Url: https://sw-char-finder.netlify.app/
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/2dc84628-0b1a-4f82-8ba8-aa5de02b83ec/deploy-status)](https://app.netlify.com/sites/sw-char-finder/deploys)
 
 1. React with TypeScript
 2. Implement React Components for Design like Material-UI and Ant Design (Material UI in this case)
